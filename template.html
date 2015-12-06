@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var canvas;
+var ctx;
+
+var height = 600;
+var width = 1000;
+
+function render() {
+	ctx.fillStyle = "rgb(0,0,0)";
+	ctx.fillRect(0, 0, width, height);
+}
+
+function update() {
+
+}
+
+
+function run() {
+	update();
+	render();
+	window.requestAnimationFrame(run);
+}
+
+function main() {
+	canvas = document.createElement("canvas");
+	canvas.height = height;
+	canvas.width = width;
+
+	ctx = canvas.getContext("2d");
+	document.body.appendChild(canvas);
+
+	run();
+}
+
+main();
+</script>
+</body>
+</html>
